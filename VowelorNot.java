@@ -19,11 +19,12 @@ public class VowelorNot
 		case'e':
 		case'i':
 		case'o':	
-		case'u': isVowel= true;
+		case'u':isVowel=true;
 		}
-		if(isVowel= true)
+		if(isVowel==true)
 		System.out.println(ch+" is an vowel ");
 		else
 		System.out.println(ch+"is a consonant ");
+		
 	}
 }

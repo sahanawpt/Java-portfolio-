@@ -1,7 +1,6 @@
-package week2;
-
+package Week_02;
 class Employee{
-    String empName;
+	String empName;
     int empNo;
     byte expYrs;
     String gender;

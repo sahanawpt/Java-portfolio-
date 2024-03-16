@@ -1,7 +1,7 @@
 package week2;
 
 class Employee{
-	String empName;
+    String empName;
     int empNo;
     byte expYrs;
     String gender;

@@ -1,62 +1,21 @@
-package week3;
-
+package emp;
+import java.util.Scanner;
 public class Employee {
+	short empId;
+	public int expYears;
 	String empName;
-	int empNo;
-	String empDesig;
-	byte expYrs;
-	double basicSalary;
-	double netSalary;
-	double grossSalary;
-	double dearnessAllowance;
-	double HRA;
-	double PA;
-	double IT;
-	Employee()
-	{
-		empName=null;
-		empNo=0;
-		empDesig=null;
-		expYrs=0;
-		basicSalary=0.0d;
+	public float salary;
+	public  Employee() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter employee number...");
+		empId=Short.parseShort(sc.next()); System.out.println("Enter employee Name...");
+		empName=sc.next();
+		System.out.println("Enter employee Gross salary...");
+		salary=Float.parseFloat(sc.next());
+		System.out.println("Enter employee years of experience...");
+		expYears=Integer.parseInt(sc.next());
 	}
-	Employee(String name,int no,String des,byte ex,double basicsalary)
-	{
-		empName=name;
-		empNo=no;
-		empDesig=des;
-		expYrs=ex;
-	    basicSalary=basicsalary;
+	public void getEmployee () {
+		System.out.println(empId+"\t"+empName+"\t"+expYears+"\t"+salary);
 	}
-	Employee(Employee obj1,Employee obj2)
-	{
-		empName=obj1.empName;
-		empNo=obj2.empNo;
-		empDesig=obj1.empDesig;
-		expYrs=obj2.expYrs;
-		basicSalary=obj2.basicSalary;
-	}
-	void getemployee()
-	{
-		dearnessAllowance=basicSalary*0.40;
-		HRA=basicSalary*0.25;
-		PA=basicSalary*10;
-		grossSalary=basicSalary+dearnessAllowance+HRA+PA;
-		
-		IT=basicSalary*10;
-		netSalary=grossSalary-IT;
-		
-		System.out.println(empName+"\t"+empNo+"\t"+empDesig+"\t\t"+expYrs+"\t"+basicSalary+"\t\t"+grossSalary+"\t\t"+netSalary);
-	}
-	public static void main(String[] args){
-		System.out.println("empName\tempNo\tempDesig\texpYrs\tbasicSalary\tgrossSalary\tnetSalary");
-		Employee rakesh=new Employee( );
-		rakesh.getemployee();
-		Employee rahul=new Employee("Rahul",100,"PM",(byte)10,1000.0d);
-		rahul.getemployee();
-		Employee ramya=new Employee(rakesh,rahul);
-		ramya.getemployee();
-	}
-
-
 }
